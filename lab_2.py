@@ -45,6 +45,17 @@ class BigNumber:
             else:
                 borrow = 0
             self.data[i] = diff
+    
+    def MOD(self, other):
+        self_as_int = int(self.getAsHexString(), 16)
+        other_as_int = int(other.getAsHexString(), 16)
+        
+        if other_as_int != 0:
+            result_as_int = self_as_int % other_as_int
+            self.setFromHexString(format(result_as_int, 'x'))
+        else:
+            raise ValueError("Division by zero")
+
 
 def run_operation(bn1, bn2, hex1, hex2, operation, op_name):
     bn1.setFromHexString(hex1)
@@ -76,10 +87,11 @@ def run_tests():
                   "70983d692f648185febe6d6fa607630ae68649f7e6fc45b94680096c06e4fadb", bn1.ADD, 'ADD')
     run_operation(bn1, bn2, "33ced2c76b26cae94e162c4c0d2c0ff7c13094b0185a3c122e732d5ba77efebc",
                   "22e962951cb6cd2ce279ab0e2095825c141d48ef3ca9dabf253e38760b57fe03", bn1.SUB, 'SUB')
+    run_operation(bn1, bn2, "33ced2c76b26cae94e162c4c0d2c0ff7c13094b0185a3c122e732d5ba77efebc",
+                  "403db8ad88a3932a0b7e8189aed9eeffb8121dfac05c3512fdb396dd73f6331c", bn1.MOD, 'MOD')
 
 def main():
     run_tests()
 
 if __name__ == '__main__':
     main()
-
