@@ -43,7 +43,7 @@ class PBlock:
         return ''.join(output_bits[i] for i in permutation_order)
     
 def main():
-    test_data = ['10000001']
+    test_data = ['10101010', '11110000', '00001111', '11001100', '00110011']
     
     print("Testing S-block:")
     for data in test_data:
@@ -52,8 +52,17 @@ def main():
     
     print("\nTesting P-block:")
     for data in test_data:
-        output_data = PBlock.transform(data)
-        print(f'Input data: {data}, Output data: {output_data}, Reverse transformation: {PBlock.inverse(output_data)}')
+        s_block_output = SBlock.transform(data)
+        p_block_input = s_block_output
+        output_data = PBlock.transform(p_block_input)
+        print(f'Input data: {p_block_input}, Output data: {output_data}, Reverse transformation: {PBlock.inverse(output_data)}')
+        
+    # separate P_block test
+    # print("\nTesting P-block:")
+    # for data in test_data:
+    #     output_data = PBlock.transform(data)
+    #     print(f'Input data: {data}, Output data: {output_data}, Reverse transformation: {PBlock.inverse(output_data)}')
+       
 
 if  __name__ == '__main__':
     main()
