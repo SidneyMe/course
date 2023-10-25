@@ -24,7 +24,7 @@ if __name__ == '__main__':
 # Lab_3
 # Алгоритм P-блоку
 #### Візуалізація формули перестановки
-![P_box](/screenshots/P_box.png)
+![P_box](/screenshots/P_Box.png)
 #### Перестановка бітів вхідного блоку відповідно до заданої формули перестановки
 ```python
 def transform(input_bits):
