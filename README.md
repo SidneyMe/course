@@ -22,36 +22,6 @@ if __name__ == '__main__':
 ```
 
 # Lab_3
-# Алгоритм P-блоку
-#### Візуалізація формули перестановки
-![P_box](/screenshots/P_Box.png)
-#### Перестановка бітів вхідного блоку відповідно до заданої формули перестановки
-```python
-def transform(input_bits):
-        permutation_order = [7, 2, 5, 1, 6, 0, 4, 3]
-        return ''.join(input_bits[i] for i in permutation_order)
-```
-
-#### Зворотне перетворення P-блоку включає в себе обернену перестановку бітів вихідного блоку відповідно до формули перестановки
-```python 
-def inverse(output_bits):
-    permutation_order = [5, 3, 1, 7, 6, 2, 4, 0]
-    return ''.join(output_bits[i] for i in permutation_order)
-```
-
-#### Результат перестановки
-```python 
-test_data = ['10000001']
-```
-![P_box_result](/screenshots/P_box_res.png)
-
-#### Результат перестановки з кількома данними
-```python 
-test_data = ['10101010', '11110000', '00001111', '11001100', '00110011']
-```
-![P_box_multiple_test](/screenshots/P_box_multiple_test.png)
-
-
 # Алгоритм S-блоку
 #### Візуалізація S-блоку
 ![S_block](/screenshots/S_box.png)
@@ -77,3 +47,45 @@ def transform(input_bits):
 ![S_block](/screenshots/S_box_res.png)
 
 #### INVERSE to be implemented
+
+# Алгоритм P-блоку
+#### Візуалізація формули перестановки
+![P_box](/screenshots/P_Box.png)
+#### Перестановка бітів вхідного блоку відповідно до заданої формули перестановки
+```python
+def transform(input_bits):
+        permutation_order = [7, 2, 5, 1, 6, 0, 4, 3]
+        return ''.join(input_bits[i] for i in permutation_order)
+```
+
+#### Зворотне перетворення P-блоку включає в себе обернену перестановку бітів вихідного блоку відповідно до формули перестановки
+```python 
+def inverse(output_bits):
+    permutation_order = [5, 3, 1, 7, 6, 2, 4, 0]
+    return ''.join(output_bits[i] for i in permutation_order)
+```
+
+#### Однобітовий тест
+```python 
+test_data = ['10000001']
+```
+![P_box_result](/screenshots/P_box_res.png)
+
+#### Мультибітовий тест
+```python 
+test_data = ['10101010', '11110000', '00001111', '11001100', '00110011']
+```
+![P_box_multiple_test](/screenshots/P_box_multiple_test.png)
+
+## Робота S та P блоків разом
+#### Однобітовий тест
+```python
+test_data = ['10000001']
+```
+![S_and_P_res](/screenshots/S_and_P.png)
+
+```python
+test_data = ['10101010', '11110000', '00001111', '11001100', '00110011']
+```
+#### Мультибітовий тест
+![S_and_P_multiple](/screenshots/S_and_P_multiple.png)
