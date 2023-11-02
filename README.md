@@ -21,7 +21,7 @@ if __name__ == '__main__':
     main()
 ```
 
-# Lab_3
+# Lab 3
 # Алгоритм S-блоку
 #### Візуалізація S-блоку
 ![S_block](/screenshots/S_box.png)
