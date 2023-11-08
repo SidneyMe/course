@@ -92,3 +92,6 @@ test_data = ['10101010', '11110000', '00001111', '11001100', '00110011']
 ```
 #### Мультибітовий тест
 ![S_and_P_multiple](/screenshots/S_and_P_multiple.png)
+# Lab 5
+### За результатами тестiв мiй агоритм в 200 разiв повiльнiший
+![comparison libbrary with mine](/screenshots/comparison.png)
