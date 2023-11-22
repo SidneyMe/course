@@ -1,5 +1,8 @@
 # Запуск
-
+#### Встановити requirements
+```python
+pip install -r requirements.txt
+```
 #### Запустити main.py
 ```python
 import lab_1 , lab_2 , lab_3, lab_4, lab_5
