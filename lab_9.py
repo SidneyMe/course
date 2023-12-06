@@ -54,20 +54,24 @@ def decrypt(p, a, x, y):
     m = (y * pow(s, -1, p)) % p
     return m
 
-# Генерація ключів
-a, b = generate_keys(p, g)
+def main():
+    # Генерація ключів
+    a, b = generate_keys(p, g)
 
-# Повідомлення
-m = "Hello, world!"
+    # Повідомлення
+    m = "Hello, world!"
 
-# Підписання повідомлення
-r, s = sign(p, g, a, m)
+    # Підписання повідомлення
+    r, s = sign(p, g, a, m)
 
-# Перевірка підпису
-print("Перевірка підпису: ", verify(p, g, b, m, r, s))
+    # Перевірка підпису
+    print("Перевірка підпису: ", verify(p, g, b, m, r, s))
 
-# Зашифрування повідомлення
-x, y = encrypt(p, g, b, ord(m[0]))
+    # Зашифрування повідомлення
+    x, y = encrypt(p, g, b, ord(m[0]))
 
-# Розшифрування повідомлення
-print("Розшифрування повідомлення: ", chr(decrypt(p, a, x, y)) == m[0])
+    # Розшифрування повідомлення
+    print("Розшифрування повідомлення: ", chr(decrypt(p, a, x, y)) == m[0])
+
+if __name__ == '__main__':
+    main()

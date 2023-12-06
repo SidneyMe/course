@@ -35,10 +35,14 @@ def decrypt(ciphertext, private_key):
     d, n = private_key
     return pow(ciphertext, d, n)
 
-public_key, private_key = generate_keys()
-message = 7
-ciphertext = encrypt(message, public_key)
-decrypted_message = decrypt(ciphertext, private_key)
-print(f"Original message: {message}")
-print(f"Encrypted message: {ciphertext}")
-print(f"Decrypted message: {decrypted_message}")
+def main():
+    public_key, private_key = generate_keys()
+    message = 7
+    ciphertext = encrypt(message, public_key)
+    decrypted_message = decrypt(ciphertext, private_key)
+    print(f"Original message: {message}")
+    print(f"Encrypted message: {ciphertext}")
+    print(f"Decrypted message: {decrypted_message}")
+
+if __name__ == '__main__':
+    main()
