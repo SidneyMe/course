@@ -5,26 +5,24 @@ pip install -r requirements.txt
 ```
 #### Запустити main.py
 ```python
-import lab_1 , lab_2 , lab_3, lab_4, lab_5, lab_7
+import lab_1, lab_2, lab_3, lab_4, lab_5, lab_7, lab_8, lab_9
 
 def main():
     labs = {
-        'lab_1': lab_1.main,
+        #'lab_1': lab_1.main, # it's a brute force you won't get to the next lab if it's not commented
         'lab_2': lab_2.main,
         'lab_3': lab_3.main,
         'lab_4': lab_4.main,
         'lab_5': lab_5.main,
         'lab_7': lab_7.main,
-        
+        'lab_8': lab_8.main,
+        'lab_9': lab_9.main,
     }
 
-    labs['lab_1']()
-    labs['lab_2']()
-    labs['lab_3']()
-    labs['lab_4']()
-    labs['lab_5']()
-    labs['lab_7']()
-    
+    for lab_name, lab_function in labs.items():
+        print(f"Running {lab_name}:")
+        lab_function()
+        print("\n")
 
 if __name__ == '__main__':
     main()
